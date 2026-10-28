@@ -1,0 +1,1152 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Water Wise Scientists: a language-responsive Grade 6 Natural Sciences and Technology curriculum (CAPS Term 2) on mixtures, dissolving and clean water.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 34 34%27%3E%3Cpath d=%27M17 3C17 3 6 15 6 21.5a11 11 0 0 0 22 0C28 15 17 3 17 3Z%27 fill=%27%230D6669%27/%3E%3C/svg%3E">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+</style>
+<title>Water Wise Scientists</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fredoka:wght@500;600&display=swap">
+<style>
+/* Layout: a learner's field notebook — one page per stop on a river journey (Home → Why → Unit 1 → 2 → 3), science in unit colours, language support always in sunflower. */
+:root{
+  --paper:#F3F7F6; --card:#FFFFFF; --ink:#13302E; --muted:#4D6563; --line:#CEDCD9;
+  --river:#0D6669; --river-soft:#DDEFEE;
+  --sun:#9A6400; --sun-bg:#FFF3D1; --sun-line:#EDC75C;
+  --u1:#9A5B12; --u1-bg:#F8EBDA;
+  --u2:#0D6669; --u2-bg:#DDEFEE;
+  --u3:#24519E; --u3-bg:#E2EAF8;
+  --alert:#A93A26; --alert-bg:#FBE5DF;
+  --good:#2E7D4F;
+  --water:#7FB6D6; --sand:#D9B77A; --gravel:#8C8478; --charcoal:#3B3B3B; --cotton:#FFFFFF;
+  --f-display:"Fredoka","Trebuchet MS","Segoe UI",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible","Verdana","Segoe UI",system-ui,sans-serif;
+  --step--1:0.875rem; --step-0:1.0625rem; --step-1:1.25rem; --step-2:1.5rem; --step-3:2rem; --step-4:2.6rem;
+  --r:14px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0E1918; --card:#152423; --ink:#E4EFED; --muted:#9FB6B3; --line:#2B3F3D;
+  --river:#5CC2C4; --river-soft:#173535;
+  --sun:#F2C14E; --sun-bg:#2C2410; --sun-line:#6B5520;
+  --u1:#E7A65A; --u1-bg:#2C2113; --u2:#5CC2C4; --u2-bg:#143131; --u3:#8FB2F0; --u3-bg:#18233A;
+  --alert:#F08A73; --alert-bg:#341A14; --good:#6FCF97;
+  --water:#3E7FA3; --sand:#A88B55; --gravel:#6E685F; --charcoal:#1C1C1C; --cotton:#D9D9D9;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0E1918; --card:#152423; --ink:#E4EFED; --muted:#9FB6B3; --line:#2B3F3D;
+  --river:#5CC2C4; --river-soft:#173535;
+  --sun:#F2C14E; --sun-bg:#2C2410; --sun-line:#6B5520;
+  --u1:#E7A65A; --u1-bg:#2C2113; --u2:#5CC2C4; --u2-bg:#143131; --u3:#8FB2F0; --u3-bg:#18233A;
+  --alert:#F08A73; --alert-bg:#341A14; --good:#6FCF97;
+  --water:#3E7FA3; --sand:#A88B55; --gravel:#6E685F; --charcoal:#1C1C1C; --cotton:#D9D9D9;
+  color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:var(--step-0);line-height:1.6;margin:0}
+body.big{font-size:1.25rem}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:600;line-height:1.2;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--river)}
+:focus-visible{outline:3px solid var(--river);outline-offset:2px;border-radius:6px}
+.wrap{max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.prose{max-width:66ch}
+
+/* Header + nav */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--card)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--card);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:12px;padding-block:10px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);margin-right:auto}
+.brand b{font-family:var(--f-display);font-size:var(--step-1);font-weight:600}
+.brand small{display:block;color:var(--muted);font-size:var(--step--1);line-height:1.2}
+.tools{display:flex;gap:6px}
+.tool{font:inherit;font-size:var(--step--1);border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:6px 12px;cursor:pointer}
+nav.views{display:flex;gap:6px;overflow-x:auto;padding-bottom:10px;scrollbar-width:thin}
+nav.views a{flex:0 0 auto;text-decoration:none;color:var(--ink);font-weight:700;font-size:var(--step--1);padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:var(--paper)}
+nav.views a[aria-current="page"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+nav.views a.u1{border-color:var(--u1)} nav.views a.u2{border-color:var(--u2)} nav.views a.u3{border-color:var(--u3)}
+
+main{padding-block:28px 64px}
+.view{display:grid;gap:28px}
+
+/* Hero */
+.hello{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.hello span{font-family:var(--f-display);font-size:var(--step-1);padding:2px 12px;border-radius:999px;background:var(--sun-bg);color:var(--sun);border:1px solid var(--sun-line)}
+.hero h1{font-size:var(--step-4);margin-bottom:12px}
+.hero p.lead{font-size:var(--step-1);color:var(--muted);max-width:60ch}
+
+/* Generic blocks */
+.block{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:14px;min-width:0}
+.block h2{font-size:var(--step-2)}
+.block h3{font-size:var(--step-1)}
+.kicker{font-size:var(--step--1);letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}
+ul.clean{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+ul.dots{margin:0;padding-left:1.2em;display:grid;gap:6px}
+ol.steps{margin:0;padding-left:1.4em;display:grid;gap:8px}
+
+/* Strand chips */
+.strand{display:inline-flex;align-items:center;gap:6px;font-size:var(--step--1);font-weight:700;padding:3px 10px;border-radius:999px}
+.strand.sci{background:var(--river-soft);color:var(--river)}
+.strand.lang{background:var(--sun-bg);color:var(--sun);border:1px solid var(--sun-line)}
+
+/* Journey */
+.journey{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;counter-reset:stop}
+.stop{position:relative;text-decoration:none;color:var(--ink);border-radius:var(--r);padding:20px;display:grid;gap:8px;border:2px solid var(--line);background:var(--card)}
+.stop:hover{transform:translateY(-2px)}
+.stop .num{font-family:var(--f-display);font-size:var(--step-3);line-height:1}
+.stop.u1{border-color:var(--u1)} .stop.u1 .num{color:var(--u1)}
+.stop.u2{border-color:var(--u2)} .stop.u2 .num{color:var(--u2)}
+.stop.u3{border-color:var(--u3)} .stop.u3 .num{color:var(--u3)}
+.stop h3{font-size:var(--step-1)}
+.stop .q{font-style:italic;color:var(--muted)}
+.meta{font-size:var(--step--1);color:var(--muted)}
+.thread{font-size:var(--step--1);border-top:1px dashed var(--line);padding-top:8px}
+
+/* Icons row */
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.how div{display:flex;gap:10px;align-items:flex-start}
+.ico{flex:0 0 38px;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--river-soft);color:var(--river)}
+.ico.sunny{background:var(--sun-bg);color:var(--sun)}
+.ico svg{width:20px;height:20px}
+
+/* Callouts */
+.talk{background:var(--sun-bg);border:1px solid var(--sun-line);border-radius:var(--r);padding:16px 18px;display:grid;gap:8px}
+.talk h4{color:var(--sun);font-size:var(--step-0)}
+.safe{background:var(--alert-bg);border:1px solid var(--alert);border-radius:var(--r);padding:16px 18px;display:grid;gap:6px}
+.safe h4{color:var(--alert);font-size:var(--step-0)}
+.frames{display:grid;gap:6px}
+.frames span{display:block;font-family:var(--f-display);font-weight:500;padding:6px 12px;border-radius:10px;background:var(--card);border:1px dashed var(--sun-line)}
+
+/* Unit banner */
+.banner{border-radius:var(--r);padding:24px;display:grid;gap:10px}
+.banner.u1{background:var(--u1-bg)} .banner.u2{background:var(--u2-bg)} .banner.u3{background:var(--u3-bg)}
+.banner .unitno{font-family:var(--f-display);font-size:var(--step-1)}
+.u1 .unitno,.u1 .accent{color:var(--u1)} .u2 .unitno,.u2 .accent{color:var(--u2)} .u3 .unitno,.u3 .accent{color:var(--u3)}
+.banner h1{font-size:var(--step-4)}
+.banner .bigq{font-size:var(--step-1)}
+.pills{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font-size:var(--step--1);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
+.jump{display:flex;flex-wrap:wrap;gap:8px}
+.jump button{font:inherit;font-size:var(--step--1);font-weight:700;cursor:pointer;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 14px}
+
+/* Section heads inside units */
+.sec-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.sec-head .ico{flex-basis:42px;width:42px;height:42px}
+.u1 .sec-head .ico{background:var(--u1-bg);color:var(--u1)}
+.u2 .sec-head .ico{background:var(--u2-bg);color:var(--u2)}
+.u3 .sec-head .ico{background:var(--u3-bg);color:var(--u3)}
+.sec-head h2{margin-right:auto}
+.listen{font:inherit;font-size:var(--step--1);font-weight:700;cursor:pointer;background:transparent;color:var(--river);border:1px solid var(--river);border-radius:999px;padding:5px 12px;display:inline-flex;align-items:center;gap:6px}
+.listen.on{background:var(--river);color:var(--paper)}
+
+/* Outcomes */
+.outcome{display:grid;grid-template-columns:1fr auto;gap:8px 16px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.outcome:last-child{border-bottom:0}
+.outcome p{min-width:0}
+.outcome b.verb{text-transform:uppercase;letter-spacing:.04em}
+.bloom{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 8px;border-radius:6px;background:var(--paper);border:1px solid var(--line);color:var(--muted);margin-left:6px;vertical-align:2px}
+.check{display:flex;gap:4px;flex-wrap:wrap}
+.check button{font:inherit;font-size:.8rem;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--muted);border-radius:999px;padding:4px 10px}
+.check button[aria-pressed="true"][data-v="0"]{background:var(--alert-bg);border-color:var(--alert);color:var(--alert)}
+.check button[aria-pressed="true"][data-v="1"]{background:var(--sun-bg);border-color:var(--sun-line);color:var(--sun)}
+.check button[aria-pressed="true"][data-v="2"]{background:var(--river-soft);border-color:var(--good);color:var(--good)}
+@media (max-width:640px){.outcome{grid-template-columns:1fr}}
+
+/* Words */
+.words{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.word{border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:6px;background:var(--paper)}
+.word b{font-family:var(--f-display);font-size:var(--step-1);font-weight:600}
+.word label{font-size:.8rem;color:var(--sun);font-weight:700}
+.word input{font:inherit;width:100%;padding:6px 10px;border-radius:8px;border:1px dashed var(--sun-line);background:var(--card);color:var(--ink)}
+
+/* Activities */
+.act{border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:10px;background:var(--paper)}
+.act-head{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline}
+.act-head h3{margin-right:auto}
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.tier{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:4px;align-content:start}
+.tier .stars{color:var(--sun);letter-spacing:2px}
+.tier h5{margin:0;font-family:var(--f-display);font-size:var(--step-0);font-weight:600}
+.roles{display:flex;flex-wrap:wrap;gap:6px}
+.roles span{font-size:var(--step--1);padding:3px 10px;border-radius:8px;background:var(--card);border:1px solid var(--line)}
+
+/* Tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:var(--step--1)}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper);font-weight:700}
+tr:last-child td{border-bottom:0}
+td.n{font-variant-numeric:tabular-nums;text-align:center}
+
+/* Figures */
+figure{margin:0;display:grid;gap:8px}
+figure .fig{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px}
+figure svg{display:block;width:100%;height:auto;max-width:640px;margin:0 auto}
+figcaption{font-size:var(--step--1);color:var(--muted)}
+
+/* Method chooser */
+.chooser{display:grid;gap:10px}
+.choose{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center}
+.choose .ifq{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.choose .arrow{color:var(--muted);font-weight:700}
+.choose .then{background:var(--u1-bg);border-radius:12px;padding:10px 12px;font-weight:700;color:var(--u1)}
+@media (max-width:560px){.choose{grid-template-columns:1fr}.choose .arrow{display:none}}
+
+/* Rubric */
+.rubric td:first-child{font-weight:700}
+.markline{display:flex;flex-wrap:wrap;gap:8px}
+
+details{border:1px solid var(--line);border-radius:12px;background:var(--card)}
+details summary{cursor:pointer;padding:12px 16px;font-weight:700}
+details > div{padding:0 16px 16px;display:grid;gap:10px}
+
+footer{border-top:1px solid var(--line);padding-block:20px;color:var(--muted);font-size:var(--step--1)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.stop:hover{transform:none}}
+.stop{transition:transform .15s ease}
+</style>
+</head>
+<body>
+
+
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <a class="brand" href="#home" aria-label="Water Wise Scientists home">
+        <svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><path d="M17 3C17 3 6 15 6 21.5a11 11 0 0 0 22 0C28 15 17 3 17 3Z" fill="var(--river)"/><circle cx="13" cy="21" r="2.2" fill="var(--paper)"/><circle cx="20" cy="25" r="1.6" fill="var(--paper)"/><circle cx="21" cy="18" r="1.2" fill="var(--paper)"/></svg>
+        <span><b>Water Wise Scientists</b><small>Grade 6 · Natural Sciences &amp; Technology · Term 2</small></span>
+      </a>
+      <div class="tools">
+        <button class="tool" id="bigText" type="button" aria-pressed="false">A+ Bigger text</button>
+      </div>
+    </div>
+    <nav class="views" aria-label="Curriculum sections">
+      <a href="#home">Welcome</a>
+      <a href="#why">Why we learn this</a>
+      <a href="#unit-1" class="u1">Unit 1 · Mixtures</a>
+      <a href="#unit-2" class="u2">Unit 2 · Dissolving</a>
+      <a href="#unit-3" class="u3">Unit 3 · Clean water</a>
+      <a href="#words">My word bank</a>
+      <a href="#teachers">Teachers &amp; families</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ===================== WELCOME ===================== -->
+<section class="view" data-view="home" aria-labelledby="t-home">
+  <div class="hero">
+    <div class="hello" lang="zu"><span>Sawubona!</span><span lang="xh">Molo!</span><span lang="en">Hello!</span></div>
+    <h1 id="t-home">Welcome, Water Wise Scientists</h1>
+    <p class="lead">This term you will find out what happens when things mix, where sugar goes when it disappears into tea, and how to make muddy water cleaner. You can think, talk and plan in isiZulu, isiXhosa or English. Your ideas count in every language.</p>
+  </div>
+
+  <div class="block">
+    <div class="sec-head"><h2>Your journey this term</h2><button class="listen" type="button" data-listen="read-journey">▶ Listen</button></div>
+    <p class="prose" id="read-journey">There are three units. Each one builds on the one before. One big idea runs through all three: everything is made of tiny <b>particles</b>, and the size of those particles helps us mix, dissolve and clean.</p>
+    <div class="journey">
+      <a class="stop u1" href="#unit-1">
+        <span class="num">1</span>
+        <h3>What’s in the Mix?</h3>
+        <p class="q">Can we always get back what we mixed?</p>
+        <p class="meta">Weeks 1–2 · about 7 hours</p>
+        <p class="thread"><b>You will make:</b> a Mixture Detective card</p>
+      </a>
+      <a class="stop u2" href="#unit-2">
+        <span class="num">2</span>
+        <h3>Where Did the Sugar Go?</h3>
+        <p class="q">When sugar disappears in tea, is it gone?</p>
+        <p class="meta">Weeks 3–6 · about 12 hours</p>
+        <p class="thread"><b>You will make:</b> a fair-test investigation report</p>
+      </a>
+      <a class="stop u3" href="#unit-3">
+        <span class="num">3</span>
+        <h3>Clean Water for Our Community</h3>
+        <p class="q">How can we make dirty water cleaner, and when is it safe to drink?</p>
+        <p class="meta">Weeks 6–10 · about 15 hours</p>
+        <p class="thread"><b>You will make:</b> a water filter and a two-language poster</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="block">
+    <h2>How each unit works</h2>
+    <div class="how">
+      <div><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" fill="currentColor"/></svg></span><p><b>Goals</b><br>What you will be able to do. Tick how sure you feel.</p></div>
+      <div><span class="ico sunny" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 4h14v9H8l-4 3v-3H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><p><b>Talk first</b><br>Share ideas in your home language before writing.</p></div>
+      <div><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 3h9l3 3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 9h6M7 12h6" stroke="currentColor" stroke-width="2"/></svg></span><p><b>Learn</b><br>Short notes and pictures. Press Listen to hear them.</p></div>
+      <div><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M7 2h6M8 2v6l-4 8a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-4-8V2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><p><b>Do</b><br>Hands-on activities in your team, with three challenge levels.</p></div>
+      <div><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><p><b>Show what you know</b><br>One task at the end of each unit, with the marking guide shown.</p></div>
+    </div>
+    <p class="prose"><span class="strand sci">Science</span> parts use the unit colour. <span class="strand lang">Language</span> help is always in yellow, so you can find it fast.</p>
+  </div>
+
+  <div class="grid2">
+    <div class="block">
+      <h2>Your science team</h2>
+      <p>You work in a team of four. Teams mix languages, so everyone can help someone. Roles change every unit.</p>
+      <ul class="clean">
+        <li><b>Reader</b> reads the instructions aloud and checks everyone understands, in any language.</li>
+        <li><b>Recorder</b> writes or draws the team’s results.</li>
+        <li><b>Materials manager</b> collects, uses safely and returns the equipment.</li>
+        <li><b>Reporter</b> shares the team’s findings with the class, using English key words.</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h2>No phone or no data?</h2>
+      <p>That is fine. Your teacher shows this page on the class screen or a phone, and gives each team a paper copy of the activities. Every activity uses things from home or school: water, salt, sugar, sand, stones, cloth and plastic bottles.</p>
+      <p>This site is one light page with no videos, so it opens quickly on a cheap phone and uses very little data. The <b>Listen</b> buttons use your phone’s own voice and do not download anything.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY ===================== -->
+<section class="view" data-view="why" aria-labelledby="t-why" hidden>
+  <div class="hero">
+    <p class="kicker">Curriculum purpose</p>
+    <h1 id="t-why">Why are we learning this?</h1>
+    <p class="lead">Water is part of every day: cooking, washing, drinking and growing food. Knowing how materials mix and how to clean water helps you, your family and your community.</p>
+  </div>
+
+  <div class="grid3">
+    <div class="block">
+      <span class="strand sci">Science</span>
+      <h3>Understand your world</h3>
+      <p>You will learn how scientists sort, separate, dissolve and clean materials. By the end of the term you will design, build and test a water filter.</p>
+    </div>
+    <div class="block">
+      <span class="strand lang">Language</span>
+      <h3>Use all your languages</h3>
+      <p>Your home language is a tool for thinking. You will use it to understand ideas first, and then learn to explain them in English the way scientists do.</p>
+    </div>
+    <div class="block">
+      <span class="strand sci">Skills</span>
+      <h3>Work like a scientist</h3>
+      <p>You will predict, test fairly, record results, solve a real problem as a team and share what you found with your class and your family.</p>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="sec-head"><h2>Our big goal</h2><button class="listen" type="button" data-listen="read-goal">▶ Listen</button></div>
+    <p class="prose" id="read-goal">By the end of Unit 3 you will explain to your class and your family, in English and in your home language, how your team’s filter makes water cleaner, and why filtered water must still be boiled before anyone drinks it.</p>
+  </div>
+
+  <div class="block">
+    <h2>How you will be assessed</h2>
+    <ul class="dots prose">
+      <li><b>Every lesson:</b> quick checks such as thumbs up, a one-question exit ticket and your teacher watching your team work. These help you, not your report card.</li>
+      <li><b>End of each unit:</b> one “Show what you know” task. You will see the marking guide before you start.</li>
+      <li><b>Science and language are marked separately.</b> Your science ideas earn science marks. Your English gets its own marks and feedback, so you can grow without losing marks for your ideas.</li>
+      <li><b>You can choose your challenge level:</b> draw and label, fill in a sentence frame, or write in your own words. Each level can reach full science marks.</li>
+    </ul>
+  </div>
+
+  <div class="talk">
+    <h4>A promise to every learner</h4>
+    <p>If you know the answer but cannot find the English words yet, say it in your home language first. Your team and your teacher will help you find the English key words.</p>
+  </div>
+</section>
+
+<!-- ===================== UNIT 1 ===================== -->
+<section class="view u1" data-view="unit-1" aria-labelledby="t-u1" hidden>
+  <div class="banner u1">
+    <span class="unitno">Unit 1 of 3</span>
+    <h1 id="t-u1">What’s in the Mix?</h1>
+    <p class="bigq"><b>Big question:</b> Can we always get back what we mixed?</p>
+    <div class="pills"><span class="pill">Weeks 1–2 · about 7 hours</span><span class="pill">CAPS: Solids, liquids and gases · Mixtures</span><span class="pill">Builds on: Grade 5 materials</span></div>
+    <div class="jump" aria-label="Jump to a part of this unit">
+      <button type="button" data-jump="u1-goals">Goals</button><button type="button" data-jump="u1-words">Key words</button><button type="button" data-jump="u1-learn">Learn</button><button type="button" data-jump="u1-do">Do</button><button type="button" data-jump="u1-res">Resources</button><button type="button" data-jump="u1-show">Show what you know</button>
+    </div>
+  </div>
+
+  <div class="block" id="u1-goals">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" fill="currentColor"/></svg></span><h2>What you will learn</h2></div>
+    <p class="meta">By the end of this unit I can… Tap how sure you feel now. Come back and change it at the end.</p>
+    <div>
+      <div class="outcome"><p><b class="verb accent">Describe</b> how particles are arranged in solids, liquids and gases.<span class="bloom">Understand</span></p><div class="check" data-key="u1-1"></div></div>
+      <div class="outcome"><p><b class="verb accent">Identify</b> mixtures at home and at school and name the materials in each one.<span class="bloom">Remember</span></p><div class="check" data-key="u1-2"></div></div>
+      <div class="outcome"><p><b class="verb accent">Classify</b> mixtures as solid + solid, solid + liquid or liquid + liquid.<span class="bloom">Understand</span></p><div class="check" data-key="u1-3"></div></div>
+      <div class="outcome"><p><b class="verb accent">Choose and use</b> hand sorting, sieving, settling and pouring, or filtering to separate a mixture.<span class="bloom">Apply</span></p><div class="check" data-key="u1-4"></div></div>
+      <div class="outcome"><p><b class="verb" style="color:var(--sun)">Use</b> the unit key words in spoken and written English after discussing them in my home language.<span class="bloom">Apply</span><span class="strand lang" style="margin-left:6px">Language</span></p><div class="check" data-key="u1-5"></div></div>
+    </div>
+  </div>
+
+  <div class="block" id="u1-words">
+    <div class="sec-head"><span class="ico sunny" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 4h14v9H8l-4 3v-3H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h2>Key words</h2><span class="strand lang">Language</span></div>
+    <p class="meta">Write the word in your home language. Ask your family if you are not sure. Your words are saved on this device and appear in <a href="#words">My word bank</a>.</p>
+    <div class="words" data-unit="1"></div>
+  </div>
+
+  <div class="block" id="u1-learn">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 3h9l3 3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 9h6M7 12h6" stroke="currentColor" stroke-width="2"/></svg></span><h2>Learn</h2><button class="listen" type="button" data-listen="u1-learn-text u1-learn-text2">▶ Listen</button></div>
+    <div id="u1-learn-text" class="prose" style="display:grid;gap:12px">
+      <h3>1. Everything is made of particles</h3>
+      <p>All materials are made of tiny pieces called <b>particles</b>. They are far too small to see. In a <b>solid</b> the particles are packed tightly and stay in place. In a <b>liquid</b> they are close together but can slide past each other, so a liquid can be poured. In a <b>gas</b> they are far apart and move quickly in all directions.</p>
+    </div>
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 600 210" role="img" aria-label="Particles in a solid are packed in rows, in a liquid they are close but jumbled, in a gas they are far apart">
+          <g font-family="Atkinson Hyperlegible, Verdana, sans-serif" font-size="16" fill="var(--ink)">
+            <rect x="20" y="20" width="160" height="140" rx="10" fill="var(--card)" stroke="var(--line)"/>
+            <g fill="var(--u1)">
+              <circle cx="50" cy="50" r="11"/><circle cx="75" cy="50" r="11"/><circle cx="100" cy="50" r="11"/><circle cx="125" cy="50" r="11"/><circle cx="150" cy="50" r="11"/>
+              <circle cx="50" cy="75" r="11"/><circle cx="75" cy="75" r="11"/><circle cx="100" cy="75" r="11"/><circle cx="125" cy="75" r="11"/><circle cx="150" cy="75" r="11"/>
+              <circle cx="50" cy="100" r="11"/><circle cx="75" cy="100" r="11"/><circle cx="100" cy="100" r="11"/><circle cx="125" cy="100" r="11"/><circle cx="150" cy="100" r="11"/>
+              <circle cx="50" cy="125" r="11"/><circle cx="75" cy="125" r="11"/><circle cx="100" cy="125" r="11"/><circle cx="125" cy="125" r="11"/><circle cx="150" cy="125" r="11"/>
+            </g>
+            <text x="100" y="190" text-anchor="middle" font-weight="700">Solid</text>
+            <rect x="220" y="20" width="160" height="140" rx="10" fill="var(--card)" stroke="var(--line)"/>
+            <g fill="var(--u2)">
+              <circle cx="245" cy="140" r="11"/><circle cx="270" cy="134" r="11"/><circle cx="296" cy="142" r="11"/><circle cx="322" cy="135" r="11"/><circle cx="350" cy="141" r="11"/>
+              <circle cx="255" cy="112" r="11"/><circle cx="283" cy="108" r="11"/><circle cx="310" cy="113" r="11"/><circle cx="338" cy="108" r="11"/><circle cx="362" cy="115" r="11"/>
+              <circle cx="244" cy="86" r="11"/><circle cx="296" cy="84" r="11"/><circle cx="324" cy="86" r="11"/>
+            </g>
+            <text x="300" y="190" text-anchor="middle" font-weight="700">Liquid</text>
+            <rect x="420" y="20" width="160" height="140" rx="10" fill="var(--card)" stroke="var(--line)"/>
+            <g fill="var(--u3)">
+              <circle cx="448" cy="45" r="11"/><circle cx="530" cy="60" r="11"/><circle cx="480" cy="100" r="11"/><circle cx="555" cy="130" r="11"/><circle cx="450" cy="138" r="11"/>
+            </g>
+            <text x="500" y="190" text-anchor="middle" font-weight="700">Gas</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Particles in a solid, a liquid and a gas. The particles themselves do not change, only how close they are and how they move.</figcaption>
+    </figure>
+    <div class="prose" style="display:grid;gap:12px" id="u1-learn-text2">
+      <h3>2. What is a mixture?</h3>
+      <p>A <b>mixture</b> is two or more materials put together. Each material keeps its own <b>properties</b>: in umngqusho, the samp is still samp and the beans are still beans. Mixtures are everywhere: muddy water after rain, sand and stones in the yard, oil and water in a pan.</p>
+      <ul class="dots">
+        <li><b>Solid + solid:</b> samp and beans, sand and gravel</li>
+        <li><b>Solid + liquid:</b> sand and water, mud</li>
+        <li><b>Liquid + liquid:</b> cooking oil and water (they form layers)</li>
+      </ul>
+      <h3>3. Separating a mixture</h3>
+      <p>Because each material keeps its properties, we can often <b>separate</b> it again. We choose a method by looking at the size and kind of the pieces.</p>
+    </div>
+    <div class="chooser" aria-label="How to choose a separation method">
+      <div class="choose"><div class="ifq">Pieces are big enough to pick out by hand?</div><span class="arrow">→</span><div class="then">Hand sorting<br><span class="meta" style="font-weight:400">like picking stones out of dry beans</span></div></div>
+      <div class="choose"><div class="ifq">Two solids with different-sized pieces?</div><span class="arrow">→</span><div class="then">Sieving<br><span class="meta" style="font-weight:400">small pieces fall through the holes</span></div></div>
+      <div class="choose"><div class="ifq">A heavy solid in a liquid?</div><span class="arrow">→</span><div class="then">Settling and pouring off<br><span class="meta" style="font-weight:400">wait for the solid to sink, then pour (decant)</span></div></div>
+      <div class="choose"><div class="ifq">Small solid pieces still floating in a liquid?</div><span class="arrow">→</span><div class="then">Filtering<br><span class="meta" style="font-weight:400">liquid passes through cloth or paper, solid stays</span></div></div>
+    </div>
+  </div>
+
+  <div class="block" id="u1-do">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M7 2h6M8 2v6l-4 8a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-4-8V2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h2>Do</h2></div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 1 · Talk first: mixing at home</h3><span class="meta">Pairs · 15 min</span><span class="strand lang">Language</span></div>
+      <div class="talk">
+        <p>In your home language, tell your partner about a time you mixed things at home: cooking, washing, building or gardening. What did you mix? Could you get the things apart again?</p>
+        <p>Now find two English words on the class word wall that match your story. Say one sentence in English together.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 2 · Mixture hunt</h3><span class="meta">On your own, at home and school · 1 lesson + homework</span></div>
+      <p>Find five mixtures. For each one, record the materials in it and whether you can see the different parts.</p>
+      <div class="tiers">
+        <div class="tier"><span class="stars" aria-label="Level 1">★</span><h5>Draw it</h5><p>Draw each mixture and label the materials. Use the word bank.</p></div>
+        <div class="tier"><span class="stars" aria-label="Level 2">★★</span><h5>Fill the frame</h5><p>“<i>___ is a mixture of ___ and ___. I can / cannot see the parts.</i>”</p></div>
+        <div class="tier"><span class="stars" aria-label="Level 3">★★★</span><h5>Write it</h5><p>Write a table and add a column saying if it is solid + solid, solid + liquid or liquid + liquid.</p></div>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 3 · Separation stations</h3><span class="meta">Teams of 4 · 2 lessons · rotate every 12 min</span></div>
+      <div class="roles"><span>Reader</span><span>Recorder</span><span>Materials manager</span><span>Reporter</span></div>
+      <ol class="steps">
+        <li><b>Station A:</b> dry beans, rice and small stones. Separate by hand sorting.</li>
+        <li><b>Station B:</b> sand and gravel. Separate using a tea strainer or a bottle lid with holes punched in it.</li>
+        <li><b>Station C:</b> muddy water in a clear bottle. Let it settle for 10 minutes, then pour off the top water gently.</li>
+        <li><b>Station D:</b> sand and water. Pour through a cloth or paper towel held in the top of a cut bottle.</li>
+      </ol>
+      <p>At each station the Recorder fills in: <i>method · what stayed behind · what passed through</i>.</p>
+      <div class="frames" aria-label="Sentence frames">
+        <span>We separated ___ from ___ by ___.</span>
+        <span>This worked because the pieces of ___ were bigger / heavier than ___.</span>
+      </div>
+      <div class="safe"><h4>Stay safe</h4><p>Do not taste anything at the stations. Wipe up spills straight away. Wash your hands afterwards.</p></div>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 4 · Build our word wall</h3><span class="meta">Teams · 20 min</span><span class="strand lang">Language</span></div>
+      <p>Each team takes two key words. Make a card with the English word, a drawing, a short meaning and the word in your home languages. Stick it on the class word wall.</p>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Exit ticket</h3><span class="meta">End of each lesson · 3 min</span></div>
+      <p>On a scrap of paper: name one mixture and one way to separate it. Any language is fine; add the English key word if you can.</p>
+    </div>
+  </div>
+
+  <div class="block" id="u1-res">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 5h5l2 2h7v9H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h2>Resources</h2></div>
+    <div class="grid2">
+      <div><h3 style="font-size:var(--step-0)">To read</h3>
+        <ul class="dots">
+          <li><a href="https://www.thunderboltkids.co.za" target="_blank" rel="noopener">Thunderbolt Kids Grade 6 Workbook A</a> (Siyavula, free): Matter and Materials chapters on solids, liquids, gases and mixtures. Your teacher has printed copies.</li>
+          <li>Your class word wall and the <a href="#words">word bank</a> on this site.</li>
+        </ul></div>
+      <div><h3 style="font-size:var(--step-0)">Things to collect</h3>
+        <ul class="dots">
+          <li>Dry beans, rice, small stones, sand, gravel</li>
+          <li>Water, a little cooking oil</li>
+          <li>2-litre plastic bottles (clean), cups or jars</li>
+          <li>Old cloth, paper towel, tea strainer</li>
+        </ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="u1-show">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h2>Show what you know: Mixture Detective card</h2></div>
+    <p class="prose">Your teacher gives you three mixtures: <b>beans with small stones</b>, <b>sand with water</b> and <b>gravel with fine sand</b>. For each one, say what it is made of, choose the best way to separate it, and explain why. Pick your challenge level. All levels can earn full science marks.</p>
+    <div class="tiers">
+      <div class="tier"><span class="stars">★</span><h5>Draw it</h5><p>Draw the method, label the materials and the equipment using the word bank.</p></div>
+      <div class="tier"><span class="stars">★★</span><h5>Fill the frame</h5><p>“<i>I will separate ___ by ___ because ___.</i>”</p></div>
+      <div class="tier"><span class="stars">★★★</span><h5>Write it</h5><p>Explain each choice in your own words, using the word “particles”.</p></div>
+    </div>
+    <h3>Marking guide · 15 marks</h3>
+    <div class="tbl"><table class="rubric">
+      <thead><tr><th>What we look for</th><th>Marks</th><th>Strand</th></tr></thead>
+      <tbody>
+        <tr><td>Names the materials in each mixture</td><td class="n">3</td><td><span class="strand sci">Science</span></td></tr>
+        <tr><td>Chooses a suitable separation method for each</td><td class="n">3</td><td><span class="strand sci">Science</span></td></tr>
+        <tr><td>Explains why the method works (size or weight of pieces)</td><td class="n">4</td><td><span class="strand sci">Science</span></td></tr>
+        <tr><td>Uses unit key words correctly in English</td><td class="n">3</td><td><span class="strand lang">Language</span></td></tr>
+        <tr><td>Labels or sentences are clear enough for a classmate to follow</td><td class="n">2</td><td><span class="strand lang">Language</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">Next: in Unit 2 you will meet a mixture you cannot separate with a sieve or a filter. Why not? Think about particles.</p>
+  </div>
+</section>
+
+<!-- ===================== UNIT 2 ===================== -->
+<section class="view u2" data-view="unit-2" aria-labelledby="t-u2" hidden>
+  <div class="banner u2">
+    <span class="unitno">Unit 2 of 3</span>
+    <h1 id="t-u2">Where Did the Sugar Go?</h1>
+    <p class="bigq"><b>Big question:</b> When sugar disappears in tea, is it gone?</p>
+    <div class="pills"><span class="pill">Weeks 3–6 · about 12 hours</span><span class="pill">CAPS: Solutions as special mixtures · Dissolving</span><span class="pill">Builds on: Unit 1 particles and mixtures</span></div>
+    <div class="jump" aria-label="Jump to a part of this unit">
+      <button type="button" data-jump="u2-goals">Goals</button><button type="button" data-jump="u2-words">Key words</button><button type="button" data-jump="u2-learn">Learn</button><button type="button" data-jump="u2-do">Do</button><button type="button" data-jump="u2-res">Resources</button><button type="button" data-jump="u2-show">Show what you know</button>
+    </div>
+  </div>
+
+  <div class="block" id="u2-goals">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" fill="currentColor"/></svg></span><h2>What you will learn</h2></div>
+    <p class="meta">By the end of this unit I can…</p>
+    <div>
+      <div class="outcome"><p><b class="verb accent">Explain</b> that a solution is a special mixture in which a solute dissolves in a solvent and can no longer be seen.<span class="bloom">Understand</span></p><div class="check" data-key="u2-1"></div></div>
+      <div class="outcome"><p><b class="verb accent">Distinguish</b> between soluble and insoluble substances by testing everyday materials in water.<span class="bloom">Analyse</span></p><div class="check" data-key="u2-2"></div></div>
+      <div class="outcome"><p><b class="verb accent">Demonstrate</b> how to make a saturated solution and how to get a solute back by evaporation.<span class="bloom">Apply</span></p><div class="check" data-key="u2-3"></div></div>
+      <div class="outcome"><p><b class="verb accent">Carry out</b> a fair test on one factor that changes how fast sugar dissolves: temperature, stirring or grain size.<span class="bloom">Apply</span></p><div class="check" data-key="u2-4"></div></div>
+      <div class="outcome"><p><b class="verb accent">Analyse</b> my results to decide which conditions make dissolving faster, and explain why using particles.<span class="bloom">Analyse</span></p><div class="check" data-key="u2-5"></div></div>
+      <div class="outcome"><p><b class="verb" style="color:var(--sun)">Report</b> an investigation in English using prediction and explanation sentence frames.<span class="bloom">Apply</span><span class="strand lang" style="margin-left:6px">Language</span></p><div class="check" data-key="u2-6"></div></div>
+    </div>
+  </div>
+
+  <div class="block" id="u2-words">
+    <div class="sec-head"><span class="ico sunny" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 4h14v9H8l-4 3v-3H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h2>Key words</h2><span class="strand lang">Language</span></div>
+    <div class="talk">
+      <h4>Word detective: melt or dissolve?</h4>
+      <p>In English, <b>melt</b> and <b>dissolve</b> are two different things. Ice melts when it gets warm. Sugar dissolves when it mixes into water. In some languages one word is used for both. Ask your family: is that true in your language? Share what you found with your team.</p>
+    </div>
+    <div class="words" data-unit="2"></div>
+  </div>
+
+  <div class="block" id="u2-learn">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 3h9l3 3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 9h6M7 12h6" stroke="currentColor" stroke-width="2"/></svg></span><h2>Learn</h2><button class="listen" type="button" data-listen="u2-learn-text u2-learn-text2">▶ Listen</button></div>
+    <div id="u2-learn-text" class="prose" style="display:grid;gap:12px">
+      <h3>1. A solution is a special mixture</h3>
+      <p>Stir sugar into water and the sugar seems to disappear. It is still there: the water tastes sweet. The sugar has <b>dissolved</b>. It has broken up into particles so small that they spread out between the water particles. Now you cannot see the sugar, and the mixture looks the same all the way through. This kind of mixture is called a <b>solution</b>.</p>
+      <p>The material that dissolves is the <b>solute</b> (sugar). The liquid it dissolves in is the <b>solvent</b> (water). This is why a filter from Unit 1 cannot get sugar out of water: the sugar particles are far smaller than the holes in any cloth or paper.</p>
+    </div>
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 600 220" role="img" aria-label="Before stirring, sugar particles are packed together in a crystal. After dissolving, sugar particles are spread evenly between water particles.">
+          <defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs>
+          <g font-family="Atkinson Hyperlegible, Verdana, sans-serif" font-size="16" fill="var(--ink)">
+            <rect x="30" y="20" width="200" height="150" rx="12" fill="var(--card)" stroke="var(--line)"/>
+            <g fill="var(--water)">
+              <circle cx="55" cy="45" r="8"/><circle cx="85" cy="55" r="8"/><circle cx="200" cy="45" r="8"/><circle cx="170" cy="60" r="8"/><circle cx="60" cy="80" r="8"/><circle cx="205" cy="90" r="8"/><circle cx="55" cy="120" r="8"/><circle cx="200" cy="130" r="8"/><circle cx="90" cy="150" r="8"/><circle cx="165" cy="150" r="8"/><circle cx="135" cy="40" r="8"/><circle cx="60" cy="155" r="8"/>
+            </g>
+            <g fill="var(--u1)">
+              <rect x="100" y="90" width="18" height="18" rx="3"/><rect x="120" y="90" width="18" height="18" rx="3"/><rect x="140" y="90" width="18" height="18" rx="3"/>
+              <rect x="100" y="110" width="18" height="18" rx="3"/><rect x="120" y="110" width="18" height="18" rx="3"/><rect x="140" y="110" width="18" height="18" rx="3"/>
+            </g>
+            <text x="130" y="198" text-anchor="middle" font-weight="700">Sugar grain in water</text>
+            <path d="M250 95 H340" stroke="var(--muted)" stroke-width="2.5" marker-end="url(#arr)"/>
+            <text x="295" y="82" text-anchor="middle" font-size="14" fill="var(--muted)">stir</text>
+            <rect x="370" y="20" width="200" height="150" rx="12" fill="var(--card)" stroke="var(--line)"/>
+            <g fill="var(--water)">
+              <circle cx="395" cy="45" r="8"/><circle cx="425" cy="55" r="8"/><circle cx="540" cy="45" r="8"/><circle cx="510" cy="60" r="8"/><circle cx="400" cy="80" r="8"/><circle cx="545" cy="90" r="8"/><circle cx="395" cy="120" r="8"/><circle cx="540" cy="130" r="8"/><circle cx="430" cy="150" r="8"/><circle cx="505" cy="150" r="8"/><circle cx="475" cy="40" r="8"/><circle cx="400" cy="155" r="8"/>
+            </g>
+            <g fill="var(--u1)">
+              <rect x="450" y="70" width="14" height="14" rx="3"/><rect x="420" y="105" width="14" height="14" rx="3"/><rect x="500" y="100" width="14" height="14" rx="3"/>
+              <rect x="465" y="130" width="14" height="14" rx="3"/><rect x="525" y="110" width="14" height="14" rx="3"/><rect x="460" y="98" width="14" height="14" rx="3"/>
+            </g>
+            <text x="470" y="198" text-anchor="middle" font-weight="700">Sugar solution</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Blue circles are water particles; brown squares are sugar particles. After dissolving, the sugar is still there, just spread out and too small to see.</figcaption>
+    </figure>
+    <div class="prose" style="display:grid;gap:12px" id="u2-learn-text2">
+      <h3>2. Soluble or insoluble?</h3>
+      <p>A substance that dissolves in water is <b>soluble</b>, like sugar, salt and instant coffee. A substance that does not dissolve is <b>insoluble</b>, like sand, chalk and cooking oil. Insoluble solids make the water cloudy or sink to the bottom.</p>
+      <h3>3. Saturated solutions</h3>
+      <p>Keep adding salt to a cup of water and stirring. At first it all dissolves. Then the grains start staying at the bottom. The water cannot hold any more: it is a <b>saturated</b> solution.</p>
+      <h3>4. Getting the solute back</h3>
+      <p>Leave salty water in a shallow lid in the sun. The water slowly <b>evaporates</b> into the air and the salt is left behind as crystals. This is how sea salt is made.</p>
+      <h3>5. What makes dissolving faster?</h3>
+      <ul class="dots">
+        <li><b>Warmer water:</b> particles move faster, so the solute breaks up and spreads sooner.</li>
+        <li><b>Stirring or shaking:</b> brings fresh water to the solute.</li>
+        <li><b>Smaller grains:</b> fine sugar has more surface touching the water than a sugar cube.</li>
+      </ul>
+      <p>To find out properly, scientists do a <b>fair test</b>: change only one thing, keep everything else the same, and measure the result.</p>
+    </div>
+  </div>
+
+  <div class="block" id="u2-do">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M7 2h6M8 2v6l-4 8a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-4-8V2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h2>Do</h2></div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 1 · Talk first: where does the sugar go?</h3><span class="meta">Teams · 20 min</span><span class="strand lang">Language</span></div>
+      <div class="talk">
+        <p>Think about sugar in tea or soft porridge. Where does it go? In your home language, share your ideas as a team. There are no wrong ideas yet.</p>
+        <p>Draw your team’s idea. Keep it: you will check it at the end of the unit.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 2 · Dissolve or not?</h3><span class="meta">Teams · 1 lesson</span></div>
+      <p>Test six materials: salt, sugar, sand, crushed chalk, cooking oil and instant coffee. Put one teaspoon in half a cup of water, stir ten times, wait one minute and look.</p>
+      <div class="tbl"><table>
+        <thead><tr><th>Material</th><th>My prediction</th><th>What I saw</th><th>Soluble or insoluble?</th></tr></thead>
+        <tbody><tr><td>Salt</td><td></td><td></td><td></td></tr><tr><td>Sand</td><td></td><td></td><td></td></tr><tr><td>…</td><td></td><td></td><td></td></tr></tbody>
+      </table></div>
+      <div class="frames"><span>I predict that ___ will dissolve because ___.</span><span>___ is soluble / insoluble because ___.</span></div>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 3 · Saturation challenge and sun salt</h3><span class="meta">Teams · 1 lesson + 3 days waiting</span></div>
+      <p>Count how many level teaspoons of salt dissolve in one cup of water before grains stay at the bottom. Compare your number with other teams. Pour a little of your saturated solution into a bottle lid and leave it on a sunny windowsill. Check it after three days.</p>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 4 · Fast or slow? A fair test</h3><span class="meta">Teams · 3 lessons</span></div>
+      <div class="roles"><span>Reader</span><span>Recorder</span><span>Materials manager</span><span>Reporter · timekeeper</span></div>
+      <p>Your team chooses <b>one</b> question:</p>
+      <ul class="dots">
+        <li>Does sugar dissolve faster in warm water or cold water?</li>
+        <li>Does sugar dissolve faster if we stir it?</li>
+        <li>Does fine sugar dissolve faster than a sugar cube or coarse sugar?</li>
+      </ul>
+      <ol class="steps">
+        <li><b>Plan:</b> what will you change? What will you keep the same (amount of water, amount of sugar, cup)? What will you measure (seconds until no sugar can be seen)?</li>
+        <li><b>Predict:</b> write your prediction with a reason.</li>
+        <li><b>Test:</b> do it three times. Count seconds aloud or use a phone timer.</li>
+        <li><b>Record:</b> put your times in a table and draw a bar graph.</li>
+        <li><b>Conclude:</b> was your prediction right? Explain using particles.</li>
+      </ol>
+      <div class="frames"><span>We changed ___. We kept ___ the same.</span><span>When the water was ___, the sugar dissolved in ___ seconds.</span><span>This happened because the particles ___.</span></div>
+      <div class="safe"><h4>Stay safe</h4><p>Your teacher pours the warm water. It is warm, never boiling. Never taste your test cups.</p></div>
+      <p class="meta"><b>Peer check:</b> swap plans with another team. Give two stars (two things done well) and a wish (one thing to fix) before you start testing.</p>
+    </div>
+  </div>
+
+  <div class="block" id="u2-res">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 5h5l2 2h7v9H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h2>Resources</h2></div>
+    <div class="grid2">
+      <div><h3 style="font-size:var(--step-0)">To read</h3>
+        <ul class="dots">
+          <li><a href="https://www.thunderboltkids.co.za" target="_blank" rel="noopener">Thunderbolt Kids Grade 6 Workbook A</a>: chapters on solutions and dissolving.</li>
+          <li>Fair-test planning sheet (paper copy from your teacher).</li>
+          <li>Sentence-frame strip for your desk.</li>
+        </ul></div>
+      <div><h3 style="font-size:var(--step-0)">Things to collect</h3>
+        <ul class="dots">
+          <li>Sugar (fine, coarse and cubes if possible), salt, instant coffee</li>
+          <li>Sand, chalk, cooking oil</li>
+          <li>Clear cups or jars, teaspoons, bottle lids</li>
+          <li>Flask of warm water (teacher), a clock or phone timer</li>
+        </ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="u2-show">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h2>Show what you know: My investigation report</h2></div>
+    <p class="prose">Write your own report of your team’s fair test from Activity 4. Your team did the test together; the report is yours. Use the report frame: <b>Question · Prediction · What we changed and kept the same · Results table and bar graph · Conclusion</b>.</p>
+    <div class="tiers">
+      <div class="tier"><span class="stars">★</span><h5>Draw it</h5><p>Draw the set-up, fill in the results table and complete the bar graph. Tell your teacher your conclusion (any language) and point to five key words.</p></div>
+      <div class="tier"><span class="stars">★★</span><h5>Fill the frame</h5><p>Use the report frame with sentence starters for each part.</p></div>
+      <div class="tier"><span class="stars">★★★</span><h5>Write it</h5><p>Write each part in your own words and explain the result using particles.</p></div>
+    </div>
+    <h3>Marking guide · 20 marks</h3>
+    <div class="tbl"><table class="rubric">
+      <thead><tr><th>What we look for</th><th>Marks</th><th>Strand</th></tr></thead>
+      <tbody>
+        <tr><td>Question and prediction with a reason</td><td class="n">3</td><td><span class="strand sci">Science</span></td></tr>
+        <tr><td>Names what was changed and what was kept the same (fair test)</td><td class="n">4</td><td><span class="strand sci">Science</span></td></tr>
+        <tr><td>Results recorded accurately in a table and bar graph</td><td class="n">4</td><td><span class="strand sci">Science</span></td></tr>
+        <tr><td>Conclusion matches the results and is explained using particles</td><td class="n">3</td><td><span class="strand sci">Science</span></td></tr>
+        <tr><td>Uses solute, solvent, dissolve, soluble correctly</td><td class="n">3</td><td><span class="strand lang">Language</span></td></tr>
+        <tr><td>Uses prediction and explanation frames (“I predict… because…”, “When…, then…”)</td><td class="n">3</td><td><span class="strand lang">Language</span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">Look back at your team drawing from Activity 1. What would you change now? Next: in Unit 3, soluble and insoluble materials turn up as water pollution.</p>
+  </div>
+</section>
+
+<!-- ===================== UNIT 3 ===================== -->
+<section class="view u3" data-view="unit-3" aria-labelledby="t-u3" hidden>
+  <div class="banner u3">
+    <span class="unitno">Unit 3 of 3</span>
+    <h1 id="t-u3">Clean Water for Our Community</h1>
+    <p class="bigq"><b>Big question:</b> How can we make dirty water cleaner, and when is it safe to drink?</p>
+    <div class="pills"><span class="pill">Weeks 6–10 · about 15 hours</span><span class="pill">CAPS: Mixtures and water resources · Processes to purify water</span><span class="pill">Builds on: separating (Unit 1) and soluble/insoluble (Unit 2)</span></div>
+    <div class="jump" aria-label="Jump to a part of this unit">
+      <button type="button" data-jump="u3-goals">Goals</button><button type="button" data-jump="u3-words">Key words</button><button type="button" data-jump="u3-learn">Learn</button><button type="button" data-jump="u3-do">Do</button><button type="button" data-jump="u3-res">Resources</button><button type="button" data-jump="u3-show">Show what you know</button>
+    </div>
+  </div>
+
+  <div class="block" id="u3-goals">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="3" fill="currentColor"/></svg></span><h2>What you will learn</h2></div>
+    <p class="meta">By the end of this unit I can…</p>
+    <div>
+      <div class="outcome"><p><b class="verb accent">Examine</b> how water in our community gets polluted, and sort pollutants into soluble and insoluble.<span class="bloom">Analyse</span></p><div class="check" data-key="u3-1"></div></div>
+      <div class="outcome"><p><b class="verb accent">Explain</b> why wetlands are important for clean water and for living things.<span class="bloom">Understand</span></p><div class="check" data-key="u3-2"></div></div>
+      <div class="outcome"><p><b class="verb accent">Compare</b> ways to clean water (settling, sieving, filtering, boiling, adding chemicals) and say what each one can and cannot remove.<span class="bloom">Analyse</span></p><div class="check" data-key="u3-3"></div></div>
+      <div class="outcome"><p><b class="verb accent">Design and make</b> a water filter from recycled materials, using the design process.<span class="bloom">Create</span></p><div class="check" data-key="u3-4"></div></div>
+      <div class="outcome"><p><b class="verb accent">Evaluate</b> how well my team’s filter works, using test results, and suggest an improvement.<span class="bloom">Evaluate</span></p><div class="check" data-key="u3-5"></div></div>
+      <div class="outcome"><p><b class="verb" style="color:var(--sun)">Present</b> a two-language poster and talk that teaches families how to make water safer.<span class="bloom">Create</span><span class="strand lang" style="margin-left:6px">Language</span></p><div class="check" data-key="u3-6"></div></div>
+    </div>
+  </div>
+
+  <div class="block" id="u3-words">
+    <div class="sec-head"><span class="ico sunny" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 4h14v9H8l-4 3v-3H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h2>Key words</h2><span class="strand lang">Language</span></div>
+    <div class="words" data-unit="3"></div>
+  </div>
+
+  <div class="block" id="u3-learn">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 3h9l3 3v11H4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M7 9h6M7 12h6" stroke="currentColor" stroke-width="2"/></svg></span><h2>Learn</h2><button class="listen" type="button" data-listen="u3-learn-text u3-safe">▶ Listen</button></div>
+    <div id="u3-learn-text" class="prose" style="display:grid;gap:12px">
+      <h3>1. How water gets polluted</h3>
+      <p>Water in rivers, dams and streams mixes with many things. When harmful things get into water, we call it <b>pollution</b>. Using what you learnt in Unit 2, we can sort pollutants:</p>
+      <ul class="dots">
+        <li><b>Insoluble pollutants</b> you can often see: plastic, cans, glass, oil, tyres and sewage (toilet waste).</li>
+        <li><b>Soluble pollutants</b> dissolve and are hidden: soap and washing powder, fertiliser and some poisons.</li>
+      </ul>
+      <h3>2. Wetlands: nature’s filters</h3>
+      <p>A <b>wetland</b> is land that is soaked with water for much of the year, like a marsh or vlei. Wetlands work like a sponge: they slow water down, plants and soil trap dirt, and some pollution is broken down. Wetlands are also homes for frogs, birds, fish and insects. Protecting wetlands helps keep our water cleaner.</p>
+      <h3>3. How water is made safe</h3>
+      <p>At a water treatment works, water is <b>screened</b> (sieved) to remove rubbish, left to <b>settle</b> so mud sinks, <b>filtered</b> through layers of sand and gravel, and then a chemical such as <b>chlorine</b> is added to kill germs.</p>
+      <p>At home, settling and filtering make water <b>clearer</b>, but they do not remove dissolved pollution and they do not kill germs. <b>Boiling</b> kills germs.</p>
+    </div>
+    <div class="safe" id="u3-safe">
+      <h4>Our safety rule</h4>
+      <p><b>Clear water is not always safe water.</b> Never drink water from your filter. Water from a filter must still be boiled, or treated by an adult, before anyone drinks it.</p>
+    </div>
+    <figure>
+      <div class="fig">
+        <svg viewBox="0 0 600 430" role="img" aria-label="A bottle filter: the bottom of a plastic bottle is cut off and the bottle is turned upside down over a cup. From top to bottom the layers are small stones, coarse sand, fine sand, crushed charcoal, and cotton wool or cloth in the neck. Cleaner water drips into the cup.">
+          <g font-family="Atkinson Hyperlegible, Verdana, sans-serif" font-size="16" fill="var(--ink)">
+            <text x="150" y="32" text-anchor="middle" font-weight="700">Muddy water in</text>
+            <path d="M150 40 V62" stroke="var(--u3)" stroke-width="3"/><path d="M142 56 L150 66 L158 56" fill="none" stroke="var(--u3)" stroke-width="3"/>
+            <path d="M80 75 H220 V275 L180 315 V345 H120 V315 L80 275 Z" fill="var(--card)" stroke="var(--muted)" stroke-width="2.5"/>
+            <rect x="82" y="78" width="136" height="36" fill="var(--water)" opacity=".55"/>
+            <rect x="82" y="114" width="136" height="44" fill="var(--gravel)"/>
+            <g fill="var(--paper)" opacity=".35"><circle cx="100" cy="128" r="7"/><circle cx="130" cy="142" r="8"/><circle cx="165" cy="126" r="7"/><circle cx="200" cy="145" r="7"/></g>
+            <rect x="82" y="158" width="136" height="40" fill="var(--sand)"/>
+            <rect x="82" y="198" width="136" height="40" fill="var(--sand)" opacity=".7"/>
+            <path d="M82 238 H218 V275 L200 293 H100 L82 275 Z" fill="var(--charcoal)"/>
+            <path d="M100 293 H200 L180 313 V318 H120 V313 Z" fill="var(--cotton)" stroke="var(--line)"/>
+            <rect x="122" y="318" width="56" height="25" fill="var(--cotton)" stroke="var(--line)"/>
+            <path d="M150 348 v14" stroke="var(--water)" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="150" cy="372" r="4" fill="var(--water)"/>
+            <path d="M95 360 H205 L195 418 H105 Z" fill="none" stroke="var(--muted)" stroke-width="2.5"/>
+            <path d="M101 392 H199 L195 418 H105 Z" fill="var(--water)" opacity=".7"/>
+            <g font-size="15">
+              <line x1="222" y1="134" x2="300" y2="134" stroke="var(--line)" stroke-width="1.5"/><text x="308" y="139"><tspan font-weight="700">Small stones (gravel)</tspan></text><text x="308" y="158" fill="var(--muted)">trap the biggest bits</text>
+              <line x1="222" y1="178" x2="300" y2="190" stroke="var(--line)" stroke-width="1.5"/><text x="308" y="195"><tspan font-weight="700">Coarse sand</tspan></text>
+              <line x1="222" y1="218" x2="300" y2="224" stroke="var(--line)" stroke-width="1.5"/><text x="308" y="229"><tspan font-weight="700">Fine sand</tspan></text><text x="308" y="248" fill="var(--muted)">traps smaller particles</text>
+              <line x1="218" y1="262" x2="300" y2="276" stroke="var(--line)" stroke-width="1.5"/><text x="308" y="281"><tspan font-weight="700">Crushed charcoal (optional)</tspan></text><text x="308" y="300" fill="var(--muted)">can reduce colour and smell</text>
+              <line x1="182" y1="325" x2="300" y2="332" stroke="var(--line)" stroke-width="1.5"/><text x="308" y="337"><tspan font-weight="700">Cotton wool or cloth</tspan></text><text x="308" y="356" fill="var(--muted)">stops sand washing out</text>
+              <line x1="200" y1="405" x2="300" y2="400" stroke="var(--line)" stroke-width="1.5"/><text x="308" y="405"><tspan font-weight="700">Clearer water, NOT safe to drink</tspan></text>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <figcaption>One possible design. Your team decides the layers, their order and their thickness, then tests whether your choices work.</figcaption>
+    </figure>
+  </div>
+
+  <div class="block" id="u3-do">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M7 2h6M8 2v6l-4 8a2 2 0 0 0 2 3h8a2 2 0 0 0 2-3l-4-8V2" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h2>Do</h2></div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 1 · Talk first: ask a family member</h3><span class="meta">Homework · in your home language</span><span class="strand lang">Language</span></div>
+      <div class="talk">
+        <p>Ask an adult at home, in your home language:</p>
+        <ul class="dots"><li>Where does our water come from?</li><li>Has our water ever been dirty or cut off? What did we do?</li><li>How did people get and clean water when you were young?</li></ul>
+        <p>Write or draw three things you learnt. Bring them to share. Your family knows things that scientists want to know.</p>
+      </div>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 2 · Pollution sort</h3><span class="meta">Teams · 1 lesson</span></div>
+      <p>Your team gets twelve picture cards (plastic bottle, soap, oil, fertiliser, tin can, sewage and more). Sort them into <b>soluble</b> and <b>insoluble</b> pollutants. Then choose the three that are most common near our school and say how each one gets into the water.</p>
+      <div class="frames"><span>___ is an insoluble pollutant because ___.</span><span>___ gets into the water when people ___.</span></div>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 3 · Wetland in a tray</h3><span class="meta">Teacher demonstration + team talk · 1 lesson</span></div>
+      <p>Your teacher pours muddy water down two slopes in a tray: one bare, one covered with a wet sponge or cloth (the “wetland”). Watch which water reaches the bottom faster and which is cleaner. Explain what the sponge did, using the words <i>slow down</i>, <i>trap</i> and <i>filter</i>.</p>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 4 · Design challenge: build a water filter</h3><span class="meta">Teams · 6 lessons · this is your term practical task</span></div>
+      <p><b>The brief:</b> A family collects rainwater in a tank. After a storm the water is cloudy with soil. Design and make a filter that makes the water as clear as possible, using only recycled or very cheap materials, that fits in a 2-litre bottle.</p>
+      <ol class="steps">
+        <li><b>Investigate:</b> test single materials (sand, gravel, cloth, cotton wool, charcoal). Which one makes muddy water clearest?</li>
+        <li><b>Design:</b> draw your filter, label every layer and give a reason for the order. Get your teacher to sign the design.</li>
+        <li><b>Make:</b> cut the bottom off the bottle, turn it upside down over a cup and build your layers. Rinse the sand and gravel first.</li>
+        <li><b>Test:</b> pour one cup of the same muddy water through. Score the water before and after with the clarity card.</li>
+        <li><b>Evaluate and improve:</b> what worked? Change one thing, test again and compare scores.</li>
+        <li><b>Communicate:</b> make your two-language poster and practise your two-minute talk.</li>
+      </ol>
+      <div class="talk">
+        <h4>How to use the clarity card</h4>
+        <p>Your teacher gives each team a card with five lines of letters, from big to tiny. Hold it behind a clear cup of water. Count how many lines you can still read through the water. 0 means very cloudy; 5 means very clear. Use the same cup and the same card every time, so your test is fair.</p>
+      </div>
+      <div class="safe"><h4>Stay safe</h4><p>An adult cuts the bottles and crushes the charcoal (only cold, used braai charcoal). Never drink or taste filtered water. Wash your hands after testing.</p></div>
+    </div>
+
+    <div class="act">
+      <div class="act-head"><h3>Activity 5 · Water Wise expo</h3><span class="meta">Whole class · families invited · 1 lesson</span><span class="strand lang">Language</span></div>
+      <p>Teams set up their filters and posters. Each Reporter gives a two-minute talk: the English part explains how the filter works; a teammate gives the main message in isiZulu or isiXhosa. Visitors leave a sticky note: two stars and a wish.</p>
+    </div>
+  </div>
+
+  <div class="block" id="u3-res">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3 5h5l2 2h7v9H3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span><h2>Resources</h2></div>
+    <div class="grid2">
+      <div><h3 style="font-size:var(--step-0)">To read and use</h3>
+        <ul class="dots">
+          <li><a href="https://www.thunderboltkids.co.za" target="_blank" rel="noopener">Thunderbolt Kids Grade 6 Workbook A</a>: chapters on water resources and purifying water.</li>
+          <li>Design brief, design sheet and clarity card (paper copies from your teacher).</li>
+          <li><a href="https://nalibali.org" target="_blank" rel="noopener">Nal’ibali</a> multilingual stories for your reading club and to read at home.</li>
+          <li>Notes from your family interview.</li>
+        </ul></div>
+      <div><h3 style="font-size:var(--step-0)">Things to collect</h3>
+        <ul class="dots">
+          <li>2-litre plastic bottles, clear cups or jars</li>
+          <li>Gravel, coarse sand, fine sand (rinsed)</li>
+          <li>Cotton wool, old cloth, used braai charcoal (adult crushes it)</li>
+          <li>Soil to make the same muddy water for every team</li>
+          <li>Poster paper or flattened boxes, koki pens</li>
+        </ul></div>
+    </div>
+  </div>
+
+  <div class="block" id="u3-show">
+    <div class="sec-head"><span class="ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span><h2>Show what you know: Water filter practical task</h2></div>
+    <p class="prose">This is your formal practical task for the term. Your team builds and tests the filter together. Each of you also hands in your own design sheet and a short reflection: <i>What did our filter remove? What could it not remove? Why must the water still be boiled?</i></p>
+    <h3>Marking guide · 20 marks (4 levels × 5 criteria)</h3>
+    <div class="tbl"><table class="rubric">
+      <thead><tr><th>Criterion</th><th>1 · Not yet</th><th>2 · Getting there</th><th>3 · Good</th><th>4 · Excellent</th></tr></thead>
+      <tbody>
+        <tr><td>Design <span class="strand sci">Science</span></td><td>Drawing with few labels</td><td>Layers labelled</td><td>Layers labelled with some reasons</td><td>Every layer labelled with a clear reason for its order</td></tr>
+        <tr><td>Make and test <span class="strand sci">Science</span></td><td>Filter not finished</td><td>Filter made; one test</td><td>Before and after clarity scores recorded</td><td>Fair repeated tests, scores recorded neatly</td></tr>
+        <tr><td>Evaluate and improve <span class="strand sci">Science</span></td><td>Says if it worked</td><td>Uses one result</td><td>Uses results to judge and suggests a change</td><td>Tests the change and compares scores</td></tr>
+        <tr><td>Science explanation <span class="strand sci">Science</span></td><td>Idea not yet clear</td><td>Says the filter catches dirt</td><td>Explains filters trap insoluble particles</td><td>Also explains why dissolved substances and germs pass through, so boiling is needed</td></tr>
+        <tr><td>Communication <span class="strand lang">Language</span></td><td>Few key words</td><td>Some key words; message partly clear</td><td>Key words used correctly; poster in English with home-language summary</td><td>Clear, accurate two-language poster and confident talk</td></tr>
+      </tbody>
+    </table></div>
+    <p class="meta">Last step: go back to the goals of all three units and update your “I can” ticks.</p>
+  </div>
+</section>
+
+<!-- ===================== WORD BANK ===================== -->
+<section class="view" data-view="words" aria-labelledby="t-words" hidden>
+  <div class="hero">
+    <p class="kicker"><span class="strand lang">Language</span></p>
+    <h1 id="t-words">My word bank</h1>
+    <p class="lead">Every science word from the three units, with a simple meaning. Add your own home-language word for each one. Ask your family and your team. Your words stay on this device.</p>
+  </div>
+  <div class="talk"><p><b>Tip:</b> some science words do not have one exact match in every language. That is fine. Write the word or short phrase your family would use, and talk about the difference with your team.</p></div>
+  <div class="block"><h2 class="accent" style="color:var(--u1)">Unit 1 · What’s in the Mix?</h2><div class="words" data-unit="1" data-bank="1"></div></div>
+  <div class="block"><h2 style="color:var(--u2)">Unit 2 · Where Did the Sugar Go?</h2><div class="words" data-unit="2" data-bank="1"></div></div>
+  <div class="block"><h2 style="color:var(--u3)">Unit 3 · Clean Water for Our Community</h2><div class="words" data-unit="3" data-bank="1"></div></div>
+</section>
+
+<!-- ===================== TEACHERS & FAMILIES ===================== -->
+<section class="view" data-view="teachers" aria-labelledby="t-teach" hidden>
+  <div class="hero">
+    <p class="kicker">For the adults</p>
+    <h1 id="t-teach">Teachers &amp; families</h1>
+    <p class="lead">How this curriculum fits CAPS, how to run it with 40 to 50 learners and very few devices, and how families can help.</p>
+  </div>
+
+  <div class="block">
+    <h2>Scope and sequence</h2>
+    <p class="prose">Grade 6 Natural Sciences and Technology, Term 2, Matter and Materials. Science and language goals grow side by side, and thinking moves from remembering and understanding (Unit 1) to analysing (Unit 2) to evaluating and creating (Unit 3).</p>
+    <div class="tbl"><table>
+      <thead><tr><th>Unit</th><th>CAPS topics</th><th>Weeks</th><th>Science focus</th><th>Language focus</th><th>Highest Bloom level</th><th>Main assessment</th></tr></thead>
+      <tbody>
+        <tr><td><b>1</b> What’s in the Mix?</td><td>Solids, liquids and gases; Mixtures</td><td class="n">1–2</td><td>Particles; mixtures; separating</td><td>Naming: key words, labels, word wall</td><td>Apply</td><td>Mixture Detective card (15)</td></tr>
+        <tr><td><b>2</b> Where Did the Sugar Go?</td><td>Solutions as special mixtures; Dissolving</td><td class="n">3–6</td><td>Solutions; solubility; saturation; rate of dissolving; fair testing</td><td>Explaining: prediction and cause-effect frames</td><td>Analyse</td><td>Investigation report (20)</td></tr>
+        <tr><td><b>3</b> Clean Water for Our Community</td><td>Mixtures and water resources; Processes to purify water</td><td class="n">6–10</td><td>Pollution; wetlands; purification; design process</td><td>Presenting: two-language poster and talk</td><td>Create</td><td>Water filter practical task (20)</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <details open>
+    <summary>Constructive alignment: outcome → activity → assessment</summary>
+    <div>
+      <div class="tbl"><table>
+        <thead><tr><th>Outcome (Bloom)</th><th>Learning activity</th><th>Assessment</th></tr></thead>
+        <tbody>
+          <tr><td>U1 Describe particles in solids, liquids, gases (Understand)</td><td>Learn notes + particle diagram; team role-play of particles</td><td>Exit ticket; Detective card explanation</td></tr>
+          <tr><td>U1 Identify and classify mixtures (Remember, Understand)</td><td>Mixture hunt (tiered)</td><td>Hunt table; Detective card “materials” criterion</td></tr>
+          <tr><td>U1 Choose and use a separation method (Apply)</td><td>Separation stations</td><td>Station observation checklist; Detective card</td></tr>
+          <tr><td>U1 Use key words in English (Apply)</td><td>Talk first; word wall cards</td><td>Detective card language criteria</td></tr>
+          <tr><td>U2 Explain solutions; distinguish soluble/insoluble (Understand, Analyse)</td><td>Talk first drawing; Dissolve or not?</td><td>Prediction cards; results table</td></tr>
+          <tr><td>U2 Demonstrate saturation and evaporation (Apply)</td><td>Saturation challenge; sun salt</td><td>Teacher questioning; team comparison chart</td></tr>
+          <tr><td>U2 Carry out and analyse a fair test (Apply, Analyse)</td><td>Fast or slow? investigation; peer plan check</td><td>Investigation report criteria 1–4</td></tr>
+          <tr><td>U2 Report using frames (Apply)</td><td>Sentence frames throughout</td><td>Investigation report criteria 5–6</td></tr>
+          <tr><td>U3 Examine pollution; explain wetlands (Analyse, Understand)</td><td>Family interview; pollution sort; wetland tray</td><td>Sort sheet; exit tickets; individual reflection</td></tr>
+          <tr><td>U3 Compare purification methods (Analyse)</td><td>Learn notes; single-material tests</td><td>Practical task: science explanation criterion</td></tr>
+          <tr><td>U3 Design, make and evaluate a filter (Create, Evaluate)</td><td>Design challenge (6 lessons)</td><td>Practical task: design, make/test, evaluate criteria</td></tr>
+          <tr><td>U3 Present a two-language poster and talk (Create)</td><td>Water Wise expo</td><td>Practical task: communication criterion; visitor feedback</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </details>
+
+  <details>
+    <summary>Running it with 40 to 50 learners</summary>
+    <div>
+      <ul class="dots prose">
+        <li>Make 10 to 12 teams of four. Mix home languages and English confidence in every team, so each team has a stronger English reader and a strong home-language explainer.</li>
+        <li>Pack one crate or box of materials per station; the Materials manager collects and returns it. Rotate stations so only four teams need the same equipment at once.</li>
+        <li>Give each challenge level for the same task; learners choose, and you nudge. Everyone works on the same science content.</li>
+        <li>Use the observation checklist on two or three teams per lesson, so every team is observed at least once a week.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Using the site with few devices or little data</summary>
+    <div>
+      <ul class="dots prose">
+        <li>Open the site once on your phone or laptop and project it, or pass the phone around team by team. It is a single light page with no video.</li>
+        <li>Copy the “Do” sections and frames onto the board or onto one paper copy per team (about 12 copies, not 50).</li>
+        <li>The Listen buttons use the device’s built-in voice; on most phones they work without extra data.</li>
+        <li>Learners’ “I can” ticks and home-language words save only on the device used. On a shared phone, use them as a whole-class check.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Language support: how we use home languages</summary>
+    <div>
+      <ul class="dots prose">
+        <li><b>Talk first, write second:</b> every unit opens with talk in any language, then moves to English key words and sentence frames.</li>
+        <li><b>Science and language are marked separately,</b> so a learner who understands the science is not hidden by limited English.</li>
+        <li><b>Home-language words are collected, not imposed.</b> Learners and families supply them. Please check the class word wall with an isiZulu- or isiXhosa-speaking colleague before it goes up.</li>
+        <li>Code-switching to explain an idea is welcome. Keep English key terms in written products, as formal CAPS tasks are written in the LoLT.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>Safety checklist</summary>
+    <div>
+      <ul class="dots prose">
+        <li>Warm water only, poured by the teacher. No boiling water in class.</li>
+        <li>No tasting during any activity. Filtered water is never drunk.</li>
+        <li>An adult cuts bottles and crushes only cold, used charcoal.</li>
+        <li>Hand washing after every practical.</li>
+      </ul>
+    </div>
+  </details>
+
+  <details>
+    <summary>How families can help</summary>
+    <div>
+      <ul class="dots prose">
+        <li>Save clean 2-litre bottles, jars and old cloth for the class.</li>
+        <li>Answer your child’s interview questions about water in your home language.</li>
+        <li>Help fill in home-language words in the word bank.</li>
+        <li>Come to the Water Wise expo in Week 10.</li>
+        <li>Read together: <a href="https://nalibali.org" target="_blank" rel="noopener">Nal’ibali</a> shares free stories in South African languages.</li>
+      </ul>
+    </div>
+  </details>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Water Wise Scientists · Grade 6 Natural Sciences &amp; Technology (CAPS, Term 2) · Designed by Muazah Ismail for CDD710/733, University of Pretoria · Reading material: Siyavula Thunderbolt Kids (free, openly licensed).</div>
+</footer>
+
+<script>
+(function(){
+  document.documentElement.lang = 'en-ZA';
+  var store = {
+    get: function(k){ try { return localStorage.getItem('wws:'+k); } catch(e){ return null; } },
+    set: function(k,v){ try { localStorage.setItem('wws:'+k, v); } catch(e){} }
+  };
+
+  /* ---------- Views (hash routing) ---------- */
+  var views = Array.prototype.slice.call(document.querySelectorAll('.view'));
+  var names = views.map(function(v){ return v.getAttribute('data-view'); });
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.views a'));
+  function show(){
+    var h = (location.hash || '').replace('#','');
+    if (names.indexOf(h) === -1) h = 'home';
+    views.forEach(function(v){ v.hidden = v.getAttribute('data-view') !== h; });
+    links.forEach(function(a){ if (a.getAttribute('href') === '#'+h) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current'); });
+    try { window.speechSynthesis && speechSynthesis.cancel(); } catch(e){}
+    resetListen();
+    window.scrollTo(0,0);
+  }
+  window.addEventListener('hashchange', show);
+
+  /* ---------- Jump buttons ---------- */
+  document.querySelectorAll('[data-jump]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var t = document.getElementById(b.getAttribute('data-jump'));
+      if (t) t.scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block:'start'});
+    });
+  });
+
+  /* ---------- Bigger text ---------- */
+  var big = document.getElementById('bigText');
+  function setBig(on){ document.body.classList.toggle('big', on); big.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  setBig(store.get('big') === '1');
+  big.addEventListener('click', function(){ var on = !document.body.classList.contains('big'); setBig(on); store.set('big', on ? '1' : '0'); });
+
+  /* ---------- Listen (read aloud) ---------- */
+  var canSpeak = false;
+  try { canSpeak = 'speechSynthesis' in window && typeof SpeechSynthesisUtterance === 'function'; } catch(e){}
+  var listenBtns = Array.prototype.slice.call(document.querySelectorAll('.listen'));
+  function resetListen(){ listenBtns.forEach(function(b){ b.classList.remove('on'); b.textContent = '▶ Listen'; }); }
+  listenBtns.forEach(function(btn){
+    if (!canSpeak) { btn.hidden = true; return; }
+    btn.addEventListener('click', function(){
+      var playing = btn.classList.contains('on');
+      try { speechSynthesis.cancel(); } catch(e){}
+      resetListen();
+      if (playing) return;
+      var text = btn.getAttribute('data-listen').split(' ').map(function(id){ var el = document.getElementById(id); return el ? el.innerText : ''; }).join('\n');
+      if (!text.trim()) return;
+      var u = new SpeechSynthesisUtterance(text);
+      u.lang = 'en-ZA'; u.rate = 0.9;
+      u.onend = resetListen; u.onerror = resetListen;
+      btn.classList.add('on'); btn.textContent = '■ Stop';
+      try { speechSynthesis.speak(u); } catch(e){ resetListen(); }
+    });
+  });
+
+  /* ---------- "I can" self-checks ---------- */
+  var labels = ['Not yet','Almost','I can!'];
+  document.querySelectorAll('.check').forEach(function(box){
+    var key = box.getAttribute('data-key');
+    box.setAttribute('role','group');
+    box.setAttribute('aria-label','How sure do you feel?');
+    var saved = store.get('chk:'+key);
+    labels.forEach(function(l,i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.textContent = l; b.setAttribute('data-v', String(i));
+      b.setAttribute('aria-pressed', saved === String(i) ? 'true' : 'false');
+      b.addEventListener('click', function(){
+        box.querySelectorAll('button').forEach(function(x){ x.setAttribute('aria-pressed','false'); });
+        b.setAttribute('aria-pressed','true');
+        store.set('chk:'+key, String(i));
+      });
+      box.appendChild(b);
+    });
+  });
+
+  /* ---------- Word bank ---------- */
+  var WORDS = {
+    1: [
+      ['particle','A tiny piece of a material, too small to see.'],
+      ['solid','Keeps its own shape. Particles are packed tightly.'],
+      ['liquid','Can be poured. Takes the shape of its container.'],
+      ['gas','Spreads out to fill any space, like air.'],
+      ['mixture','Two or more materials put together.'],
+      ['property','What a material is like: its colour, size, feel or taste.'],
+      ['separate','To take the parts of a mixture apart.'],
+      ['sieve','A tool with small holes that lets small pieces fall through.'],
+      ['settle','When heavy bits sink to the bottom of a liquid.'],
+      ['decant','To pour off a liquid gently, leaving the solid behind.'],
+      ['filter','Cloth or paper that lets liquid through but stops solid bits.']
+    ],
+    2: [
+      ['dissolve','When a solid breaks into tiny particles and spreads through a liquid.'],
+      ['melt','When a solid turns into a liquid because it gets warm.'],
+      ['solution','A mixture where one material has dissolved in another.'],
+      ['solute','The material that dissolves, like sugar.'],
+      ['solvent','The liquid that does the dissolving, like water.'],
+      ['soluble','Can dissolve in water.'],
+      ['insoluble','Cannot dissolve in water.'],
+      ['saturated','When no more solute can dissolve.'],
+      ['evaporate','When a liquid slowly turns into a gas and goes into the air.'],
+      ['predict','To say what you think will happen, and why.'],
+      ['fair test','A test where you change only one thing.']
+    ],
+    3: [
+      ['pollution','Harmful things getting into water, air or land.'],
+      ['pollutant','A thing that pollutes, like oil or soap.'],
+      ['wetland','Land soaked with water for much of the year, like a marsh.'],
+      ['purify','To make something clean and pure.'],
+      ['germs','Tiny living things that can make us sick.'],
+      ['boil','To heat water until it bubbles strongly. This kills germs.'],
+      ['chlorine','A chemical added to tap water to kill germs.'],
+      ['design','A plan or drawing for something you will make.'],
+      ['evaluate','To judge how well something works, using evidence.'],
+      ['improve','To make something work better.']
+    ]
+  };
+  document.querySelectorAll('.words').forEach(function(wrap){
+    var unit = wrap.getAttribute('data-unit');
+    var bank = wrap.hasAttribute('data-bank');
+    (WORDS[unit] || []).forEach(function(w, i){
+      var id = (bank ? 'bank-' : 'u'+unit+'-') + 'w' + unit + '-' + i;
+      var key = 'word:' + unit + ':' + i;
+      var card = document.createElement('div'); card.className = 'word';
+      var b = document.createElement('b'); b.textContent = w[0];
+      var p = document.createElement('p'); p.textContent = w[1]; p.style.fontSize = 'var(--step--1)';
+      var lab = document.createElement('label'); lab.setAttribute('for', id); lab.textContent = 'My home-language word';
+      var inp = document.createElement('input'); inp.id = id; inp.type = 'text'; inp.autocomplete = 'off'; inp.setAttribute('data-key', key);
+      inp.value = store.get(key) || '';
+      inp.addEventListener('input', function(){
+        store.set(key, inp.value);
+        document.querySelectorAll('input[data-key="'+key+'"]').forEach(function(o){ if (o !== inp) o.value = inp.value; });
+      });
+      card.appendChild(b); card.appendChild(p); card.appendChild(lab); card.appendChild(inp);
+      wrap.appendChild(card);
+    });
+  });
+
+  show();
+})();
+</script>
+
+</body>
+</html>
